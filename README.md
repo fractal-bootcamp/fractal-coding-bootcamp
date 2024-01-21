@@ -7,8 +7,8 @@
 Coding Bootcamp
 
 To launch:
-npm run setup
-npm run dev
+`bun setup`
+`bun dev`
 
 
 Concept Reference Sheet:
