@@ -1,5 +1,9 @@
 # fractal-coding-bootcamp
 
+
+1. Install Bun
+`curl -fsSL https://bun.sh/install | bash`
+
 Coding Bootcamp
 
 To launch:
