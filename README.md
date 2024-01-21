@@ -7,8 +7,8 @@
 Coding Bootcamp
 
 To launch:
-`bun setup`
-`bun dev`
+1. `bun setup`
+2. `bun dev`
 
 
 Concept Reference Sheet:
