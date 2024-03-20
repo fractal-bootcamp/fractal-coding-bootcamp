@@ -1,3 +1,5 @@
+From the `/fractalu` directory
+
 ## Install Bun
 curl -fsSL https://bun.sh/install | bash
 
@@ -12,6 +14,9 @@ nvm use
 
 ## Install Dependencies
 bun install
+
+## Set up .env
+cp .env.example .env
 
 ## Start the Server
 npm run dev

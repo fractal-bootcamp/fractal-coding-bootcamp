@@ -1,7 +1,7 @@
 import type { Password, User } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
-import { prisma } from "~/db.server";
+import { prisma } from "~/.server/db";
 
 export type { User } from "@prisma/client";
 
