@@ -10,8 +10,8 @@ exec /bin/zsh
 nvm i
 nvm use
 
-
 ## Install Dependencies
 bun install
 
 ## Start the Server
+npm run dev
