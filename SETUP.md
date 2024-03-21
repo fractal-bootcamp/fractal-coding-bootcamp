@@ -12,6 +12,9 @@ exec /bin/zsh
 nvm i
 nvm use
 
+## Go into FractalU Directory
+cd fractalu
+
 ## Install Dependencies
 bun install
 
