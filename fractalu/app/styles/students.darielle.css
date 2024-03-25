@@ -14,7 +14,7 @@ body {
     text-shadow: 2px 2px indigo;
     letter-spacing: 4px;
 }
-button {
+a {
     display: inline;
     margin-left: 5px;
     margin-right: 5px;
@@ -26,7 +26,7 @@ button {
     padding: 8px 10px;
     background-color: #d9ead3;
 }
-button:hover {
+a:hover {
     background-color: teal;
   color: white;
 }
