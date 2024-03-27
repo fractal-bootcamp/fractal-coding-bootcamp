@@ -19,7 +19,7 @@ const About = () => {
       <div className="space-y-4">
         <h2 className="text-center text-2xl md:text-3xl font-regular mb-4">About me (and my cats)</h2>
         <p>
-          I'm Callan. I live with my two cats, Peter and Greg, senior boys who I adopted in 2019.
+          I'm Callan. I live with my two cats, Peter and Gregory*, senior boys who I adopted in 2019.
           They have risen to relative* social media stardom on <a href="https://www.instagram.com/greg_and_peter"
           target="_blank" className="underline text-red-300 hover:text-red-400 visited:text-red-300">Instagram</a>,
           where I like to put videos of them looking ridiculous with equally ridiculous soundtracks (and sometimes
