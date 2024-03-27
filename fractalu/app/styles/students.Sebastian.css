@@ -1,36 +1,28 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff6ec;
-    color: indigo;
+.container {
+    background-color: #e6ccff; /* Light purple */
+    padding: 20px;
     text-align: center;
 }
 
-.name {
-    color:rgb(217, 25, 217);
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: underline wavy rgb(56, 18, 183);
-    text-underline-offset: 10px;
-    text-shadow: 2px 2px rgb(73, 12, 117);
-    letter-spacing: 4px;
+.header {
+    color: #87ceeb; /* Sky blue */
+    font-size: 36px;
 }
-a {
-    display: inline;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 40px;
-    border: 3px solid purple;
-    border-radius: 5px;
-    font-family: cursive;
-    letter-spacing: 1px;
-    padding: 8px 10px;
-    background-color: #98ae90;
+
+.haiku {
+    margin-top: 30px;
+    color: #ff4500; /* Sunset orange */
+    font-size: 18px;
 }
-a:hover {
-    background-color: cyan;
-  color: white;
+
+.instagram-link {
+    display: block;
+    margin-top: 30px;
+    color: #000; /* Black */
+    text-decoration: none;
+    font-size: 20px;
 }
-img {
-    margin-top: 20px;
-    width: 100%;
+
+.instagram-link:hover {
+    color: #ff4500; /* Sunset orange */
 }
