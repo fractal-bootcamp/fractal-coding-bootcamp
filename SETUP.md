@@ -20,3 +20,5 @@ cp .env.example .env
 
 ## Start the Server
 npm run dev
+or
+bun dev
