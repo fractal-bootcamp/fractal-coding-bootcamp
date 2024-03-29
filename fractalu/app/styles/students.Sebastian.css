@@ -5,19 +5,57 @@
 }
 
 .header {
-    color: #87ceeb; /* Sky blue */
+    color: #ff4500; /* Sunset orange */
     font-size: 36px;
 }
 
 .haiku {
     margin-top: 30px;
-    color: #ff4500; /* Sunset orange */
+    color: #01b5fc; /* Sky blue */
     font-size: 18px;
+}
+
+.listTitle {
+    text-align: center;
+}
+
+.list {
+    text-align: left;
+}
+.TextBox {
+    background-color: #15d5ac; /* Sea foam */
+    color: #222222;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid black;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.paragraph {
+    margin-top: 30px;
+    color: #64006b; /* Dark-ish purple */
+    font-size: 18px;
+}
+
+.artwork {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
 }
 
 .instagram-link {
     display: block;
     margin-top: 30px;
+    margin-bottom: 50px;
     color: #000; /* Black */
     text-decoration: none;
     font-size: 20px;
