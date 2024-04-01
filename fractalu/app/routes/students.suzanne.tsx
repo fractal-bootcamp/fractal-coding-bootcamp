@@ -1,5 +1,4 @@
 import React from 'react';
-// import './styles.css'; // Import your CSS file
 import 'tailwindcss/tailwind.css';
 
 
@@ -78,12 +77,13 @@ const SuzannePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 bg-white">
         <AboutMe />
       </main>
       <Footer />
     </div>
   );
 };
+
 
 export default SuzannePage;
