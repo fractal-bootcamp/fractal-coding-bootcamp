@@ -1,22 +1,22 @@
 import React from 'react';
-import './students.sebastian.css'; 
-import FractalDrawing from './FractalDrawing.jpg'; 
-import SonicVibrationsBeingDrawing from './SonicVibrationsBeingDrawing.jpg';
-import PipeCleanerSculptures1 from './PipecleanerSculpturesWovenPods.JPG';
-import PipeCleanerSculptures2 from './PipecleanerSculpturesZigZags.JPG';
-import CellularCircuits1 from './EncodingDevices2a_cont.png';
-import CellularCircuits2 from './fueldroppingsSalmonTeal5.png';
-import CellularCircuits3 from './PowerGridFullyGrown.png';
-import CellularCircuits4 from './V9firstWorld6.png';
-import MoirePatterns1 from './quasicrystal2.svg';
-import MoirePatterns2 from './CircleSetPairOscOsc.png';
-import MoirePatterns3 from './RippleEnergyDissipate2.png';
-import MoirePatterns4 from './SourceVoronoiMoire.png';
+import '~/img/students.sebastian.css'; 
+import FractalDrawing from '~/img/FractalDrawing.jpg'; 
+import SonicVibrationsBeingDrawing from '~/img/SonicVibrationsBeingDrawing.jpg';
+import PipeCleanerSculptures1 from '~/img/PipecleanerSculpturesWovenPods.jpg';
+import PipeCleanerSculptures2 from '~/img/PipecleanerSculpturesZigZags.jpg';
+import CellularCircuits1 from '~/img/EncodingDevices2a_cont.png';
+import CellularCircuits2 from '~/img/fueldroppingsSalmonTeal5.png';
+import CellularCircuits3 from '~/img/PowerGridFullyGrown.png';
+import CellularCircuits4 from '~/img/V9firstWorld6.png';
+import MoirePatterns1 from '~/img/quasicrystal2.svg';
+import MoirePatterns2 from '~/img/CircleSetPairOscOsc.png';
+import MoirePatterns3 from '~/img/RippleEnergyDissipate2.png';
+import MoirePatterns4 from '~/img/SourceVoronoiMoire.png';
 
 
 
 const thingsILike = [
-  "Do yoga, ",
+  "Do yooooga, ",
   "Go surfing, ",
   "Drink smoothies, ",
   "Take meandering walks, ",
