@@ -46,6 +46,7 @@ export default function Index() {
                     >
                       Sign up
                     </Link>
+                    <Link to="/students.adam"  className="flex items-center justify-center rounded-md bg-yellow-500 border-black border-2 px-4 py-3 font-medium text-white hover:bg-yellow-600"> Adam yooooooo</Link>
                     <Link
                       to="/login"
                       className="flex items-center justify-center rounded-md bg-yellow-500 border-black border-2 px-4 py-3 font-medium text-white hover:bg-yellow-600"
