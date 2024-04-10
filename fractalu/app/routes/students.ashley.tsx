@@ -1,41 +1,15 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-
-
-function getInterests() {
-  const interests = ['Coding', 'Music', 'Gaming', 'Traveling', 'Reading'];
-
-  return interests;
-}
+import ashleyData from "~/data/ashley.json";
 
 export const loader = async () => {
   return json({
-    interests: [
-      {
-        slug: "coding",
-        title: "Coding",
-      },
-      {
-        slug: "music",
-        title: "Music",
-      },
-      {
-        slug: "gaming",
-        title: "Gaming",
-      },
-      {
-        slug: "traveling",
-        title: "Traveling",
-      },
-      {
-        slug: "reading",
-        title: "Reading",
-      },
-    ]
+    name: ashleyData.name,
+    interests: ashleyData.interests,
   });
 };
 
-export function Interests({ interests }: { interests: { slug: string, title: string }[] }) {
+export function Interests({ interests }: { interests: { description: string, title: string }[] }) {
   return (
     <div>
       {interests.map((interest, index) => (
@@ -46,7 +20,7 @@ export function Interests({ interests }: { interests: { slug: string, title: str
 }
 
 function Ashley() {
-  const { interests } = useLoaderData<typeof loader>();
+  const { interests, name } = useLoaderData<typeof loader>();
   const isColored = true
   const textClass = isColored ? 'text-blue-500 font-serif' : 'text-black font-sans'
   console.log('Ashley is rendering')
@@ -54,6 +28,7 @@ function Ashley() {
 
   return (
     <div className="flex min-h-full flex-col justify-center text-5xl">
+      <h1 className={textClass}>{name}</h1>
       <Interests interests={interests} />
       <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}

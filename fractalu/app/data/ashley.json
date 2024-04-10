@@ -1,0 +1,25 @@
+{
+    "name": "Ashley",
+    "interests": [
+    {
+        "description": "Right now I'm learning to code and stuff.",
+        "title": "Coding"
+    },
+    {
+        "description": "Right now I'm learning to code and stuff.",
+        "title": "Music"
+    },
+    {
+        "description": "Right now I'm learning to code and stuff.",
+        "title": "Gaming"
+    },
+    {
+        "description": "Right now I'm learning to code and stuff.",
+        "title": "Traveling"
+    },
+    {
+        "description": "Right now I'm learning to code and stuff.",
+        "title": "Reading"
+    }
+]
+}
