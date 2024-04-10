@@ -7,7 +7,7 @@ import { Form } from "@remix-run/react";
 import { ActionFunctionArgs } from '@remix-run/node'; // Import ActionFunctionArgs
 
 // Initialize an array to store comments
-let persistedComments: string[] = data.comments.slice();
+let persistedComments: string[] = new Array(...data.comments);
 
 const MyComponent: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -20,23 +20,6 @@ const MyComponent: React.FC = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewComment(event.target.value);
-  };
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Add the new comment to the list of comments
-    setComments([...comments, newComment]);
-    persistedComments.push(newComment); // Add the new comment to the persisted comments
-    setNewComment(''); // Clear the input field
-
-    // Send the comment to the server
-    await fetch('/api/comments', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ comment: newComment }),
-    });
   };
 
   const { name, bio, bookList } = data; // Destructure data object
@@ -56,14 +39,13 @@ const MyComponent: React.FC = () => {
         <p><strong>Name:</strong> {name}</p>
         <p><strong>Bio:</strong> {bio}</p>
       </div>
-      
       <div className="flex justify-center items-center">
     <img src="https://miro.medium.com/v2/resize:fit:800/format:webp/1*5pri8yjj5QTJq-XMrqwakw.gif" alt="Suzanne's GIF" className="rounded-lg shadow-lg w-60" />
-        <img src="https://i.pinimg.com/originals/2d/11/90/2d1190ef23ed9f21cd4e3b1bd3e688c8.gif" alt="Sticker" className="w-20 md:w-32 ml-4" />
-        {/* <img src="https://media3.giphy.com/media/fwW11c8nPJ1UjkcNU3/giphy.gif" alt="Sticker" className="w-20 md:w-32 ml-4" /> */}
+        {/* <img src="https://i.pinimg.com/originals/62/ee/f3/62eef37f128f5ba474805bfa123d55bc.gif" alt="Sticker" className="w-20 md:w-32 ml-4" /> */}
+        <img src="https://media3.giphy.com/media/fwW11c8nPJ1UjkcNU3/giphy.gif" alt="Sticker" className="w-20 md:w-32 ml-4" />
       </div>
 
-      <div className="mb-4">
+      <div className="block mb-2 mt-4">
         <p><strong>Books:</strong></p>
         <ul>
           {bookList.map((book, index) => (
@@ -78,9 +60,9 @@ const MyComponent: React.FC = () => {
       </div>
 
       {/* Form for adding comments */}
-      <Form method="post" action="/api/comments" onSubmit={handleSubmit}>
-        <label className="block mb-2">
-          Add a comment:
+      <Form method="post">
+        <label className="font-bold block mb-2">
+          Add a new comment:
           <input type="text" name="comment" value={newComment} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-1 w-full" />
         </label>
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 w-full">Submit</button>
@@ -106,15 +88,22 @@ export let loader: LoaderFunction = async () => {
 
 // Define the action function to handle comment submissions
 export let action: ActionFunction = async ({ request }: ActionFunctionArgs) => {
-  const requestBody = await request.text();
-  const { comment } = JSON.parse(requestBody);
+  const formData = await request.formData();
+  const comment = formData.get("comment");
+
+  if (typeof comment === "string") {
+    persistedComments.push(comment)
+
+  }
+
+  console.log(comment)
   
   // Perform any additional actions with the comment, such as storing it in a database
+  // persistedComments.push("new comment")
+
 
   // Return a response
-  return new Response(null, {
-    status: 200,
-  });
+  return json(comment)
 };
 
 export default MyComponent;
