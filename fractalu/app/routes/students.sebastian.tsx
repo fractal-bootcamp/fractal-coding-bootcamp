@@ -31,7 +31,12 @@ const thingsILike = [
   "Drink smoothies, ",
   "Take meandering walks, ",
   "Build sculptures, ",
-  "Create drawings of fractals and patterns! ",
+  "Create drawings of fractals, patterns, and structures, ",
+  "Dance",
+  "Hackeysack",
+  "Watch clouds, water, and trees swaying in the wind,",
+  "Admire budding flowers in the Spring,",
+  "And fallen leaves in the Fall,",
   "Code simulations, pattern generators, and simple games."
 ]
 
@@ -57,45 +62,51 @@ const SebastianPage = () => {
     return (
         <div className="container">
           <ThemeToggle />
-            <h1 className="bg-primary text-primary-content m-2">Sebastian's personal page</h1>
-            <button className='btn btn-primary m-2'>About Me</button>
-            <button className='btn btn-secondary m-2'>Find Out More</button>
+            <h1 className="bg-info-content text-secondary-content font-bold text-xl m-2">Sebastian's personal page</h1>
+            <button className='btn btn-error m-2'>Etsy Shop</button>
+            <button className='btn btn-accent m-2'>Instagram</button>
+            <button className='btn btn-info m-2'>Drawings and Paintings</button>
+            <button className='btn btn-success m-2'>Sculptures</button>
+            <button className='btn btn-primary m-2'>Writing</button>
+            <button className='btn btn-secondary m-2'>Projects</button>
             <p className="haiku">
                 A vibrant petal <br />
                 floats down the rivering stream <br />
                 of my flowing thoughts
             </p>
-            <div className="TextBox">
-              <h3>About Me</h3>
-              <span className="listTitle">I Like to:</span>
-              <ul className="list">
-                  {thingsILike.map((item) => (
-                      <li key={item}>{item}</li>
-                  ))}
-              </ul>
+            <h3 className="font-bold text-lg">About Me</h3>
+            <div className="TextBoxNest">
+              <div className="TextBox">
+                <span className="listTitle">I Like to:</span>
+                <ul className="list">
+                    {thingsILike.map((item) => (
+                        <li key={item}>{item}</li>
+                    ))}
+                </ul>
+              </div>
+              <div className="TextBox">
+                <span className="listTitle">Some of My Favorite Words:</span>
+                <ul className="list">
+                    {favoriteWords.map((item) => (
+                        <li key={item}>{item}</li>
+                    ))}
+                </ul>
+              </div>
             </div>
-            <div className="TextBox">
-              <h3>Some of My Favorite Words</h3>
-              <ul className="list">
-                  {favoriteWords.map((item) => (
-                      <li key={item}>{item}</li>
-                  ))}
-              </ul>
-            </div>
-            <p className="paragraph">This is a drawing I made recently:</p>
+            <p className="text-accent-content m-5">This is a drawing I made recently:</p>
             <img src={FractalDrawing} alt="Sebastian's Art" className="artwork" />
-            <p className="paragraph">This is a drawing I made awhile ago:</p>
+            <p className="text-accent-content m-5">This is a drawing I made awhile ago:</p>
             <img src={SonicVibrationsBeingDrawing} alt="Sebastian's Art" className="artwork" />
-            <p className="paragraph">These are some of my sculptures. I made them using pipe cleaners:</p>
+            <p className="text-accent-content m-5">These are some of my sculptures. I made them using pipe cleaners:</p>
             <img src={PipeCleanerSculptures1} alt="Sebastian's Art" className="artwork" />
-            <p className="paragraph">These are some more of my pipe cleaner sculptures:</p>
+            <p className="text-accent-content m-5">These are some more of my pipe cleaner sculptures:</p>
             <img src={PipeCleanerSculptures2} alt="Sebastian's Art" className="artwork" />
-            <p className="paragraph">These are some stills from a game I am building in which you can design and program interactive circuits of 2D block entities:</p>
+            <p className="text-accent-content m-5">These are some stills from a game I am building in which you can design and program interactive circuits of 2D block entities:</p>
             <img src={CellularCircuits1} alt="Sebastian's Art" className="artwork" />
             <img src={CellularCircuits2} alt="Sebastian's Art" className="artwork" />
             <img src={CellularCircuits3} alt="Sebastian's Art" className="artwork" />
             <img src={CellularCircuits4} alt="Sebastian's Art" className="artwork" />
-            <p className="paragraph">These are some moire patterns I created with a moire pattern generater I designed:</p>
+            <p className="text-accent-content m-5">These are some moire patterns I created with a moire pattern generater I designed:</p>
             <img src={MoirePatterns1} alt="Sebastian's Art" className="artwork" />
             <img src={MoirePatterns2} alt="Sebastian's Art" className="artwork" />
             <img src={MoirePatterns3} alt="Sebastian's Art" className="artwork" />
