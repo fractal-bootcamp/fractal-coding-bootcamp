@@ -1,0 +1,87 @@
+.container {
+   /* background-color: #e6ccff; /* Light purple */
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    color: #ff4500; /* Sunset orange */
+    font-size: 36px;
+}
+
+.haiku {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #01b5fc; /* Sky blue */
+    font-size: 18px;
+}
+
+.listTitle {
+    text-align: center;
+    font-weight: bold;
+}
+
+.list {
+    text-align: left;
+}
+.TextBox {
+    display: inline-block;
+    vertical-align: top; /* Align text boxes at the top */
+    background-color: #15d5ac; /* Sea foam */
+    color: #222222;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.TextBoxNest {
+    display: inline-block;
+    vertical-align: top; /* Align text boxes at the top */
+    background-color: #b06ba1; /* Rose*/
+    color: #ffffff;
+    width: 700px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.paragraph {
+    margin-top: 30px;
+    color: #bf5ec6; /* Dark-ish purple */
+    font-size: 18px;
+}
+
+.artwork {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+}
+
+.instagram-link {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: #000; /* Black */
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.instagram-link:hover {
+    color: #ff4500; /* Sunset orange */
+}
