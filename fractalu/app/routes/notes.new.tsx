@@ -12,6 +12,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
   const title = formData.get("title");
   const body = formData.get("body");
+  const password = formData.get("password") as string;
 
   if (typeof title !== "string" || title.length === 0) {
     return json(
@@ -27,10 +28,20 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     );
   }
 
-  const note = await createNote({ body, title, userId });
+  const note = await createNote({ body, title, userId, tag: "test", password });
 
   return redirect(`/notes/${note.id}`);
 };
+
+const PasswordField = () => (
+  <label className="flex w-full flex-col gap-1">
+    <span>Password:</span>
+    <input
+      name="password"
+      type="password"
+      className="flex-1 rounded-md border-2 border-blue-500 px-3 text-ld" />
+  </label>
+);
 
 export default function NewNotePage() {
   const actionData = useActionData<typeof action>();
@@ -55,6 +66,10 @@ export default function NewNotePage() {
         width: "100%",
       }}
     >
+      <div>
+        <PasswordField />
+      </div>
+
       <div>
         <label className="flex w-full flex-col gap-1">
           <span>Title: </span>
