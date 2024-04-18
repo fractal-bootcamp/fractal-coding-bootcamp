@@ -1,4 +1,3 @@
-
 const thingsILike = [
   "potatoes",
   "ice cream",
@@ -6,7 +5,7 @@ const thingsILike = [
 ]
 
 const NewTextComponent = ({ imgSource }: {imgSource: string}) => {
-  <img src={imgSource}></img>
+  return <img src={imgSource}></img>;
 }
 
 const HeaderComponent = () => {
@@ -17,7 +16,7 @@ const HeaderComponent = () => {
 
 const Image = ({ Text }: {Text: string}) => {
   return (
-    <img src=""></img>
+    return <img src=""></img>
   )
 }
 
@@ -25,7 +24,6 @@ const Parth = () => {
   return <div className="flex min-h-full flex-col p-1 ">
 
     <HeaderComponent />
-    return 
 
 
     <div className="flex flex-row gap-50">
