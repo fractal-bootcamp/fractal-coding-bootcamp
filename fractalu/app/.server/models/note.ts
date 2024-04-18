@@ -23,8 +23,8 @@ export function getNoteListItems({ userId }: { userId: User["id"] }) {
 
 export function createNote({
   body,
-  title,
   password,
+  title,
   userId,
   tag,
 }: Pick<Note, "body" | "title" | "tag" | "password"> & {

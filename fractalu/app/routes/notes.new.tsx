@@ -104,12 +104,16 @@ export default function NewNotePage() {
             }
           />
         </label>
+
+        <PasswordField />
         {actionData?.errors?.body ? (
           <div className="pt-1 text-red-700" id="body-error">
             {actionData.errors.body}
           </div>
         ) : null}
       </div>
+
+
 
       <div className="text-right">
         <button
