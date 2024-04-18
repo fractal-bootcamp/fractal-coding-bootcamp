@@ -1,4 +1,5 @@
-import { prisma } from "~/.server/db";
+import type { ClassApplication } from "@prisma/client";
+import { prisma } from "dbclient";
 
 export function createClass({
     id,
@@ -18,7 +19,7 @@ export function createClass({
     schedule_constraints: string
 
 }) {
-    return prisma.class.create({
+    return prisma.ClassApplication.create({
         data: {
             id,
             schedule_options,
@@ -32,17 +33,18 @@ export function createClass({
     }
 
     )
-    
+
 }
 
 export function getClass({
     id
-})
-{
-    return prisma.class.findFirst({
+}: {
+    id: number
+}) {
+    return prisma.ClassApplication.findFirst({
         where: { id },
-      });
-    
+    });
+
 
 }
 

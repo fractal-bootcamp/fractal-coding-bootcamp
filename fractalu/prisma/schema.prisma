@@ -61,16 +61,16 @@ model SocialLink {
 }
 
 model ClassApplication {
-  id                  String           @id @default(cuid())
-  scheduleOptions     ScheduleOption[]
-  name                String           @unique
-  description         String           @unique
-  location            String
-  expectedClassSize   Int
-  scheduleConstraints String
+  id                   String            @id @default(cuid())
+  schedule_options     ScheduleOptions[]
+  name                 String            @unique
+  description          String            @unique
+  location             String
+  class_size           Int
+  schedule_constraints String
 }
 
-enum ScheduleOption {
+enum ScheduleOptions {
   WeekdayEvenings
   WeekdayNights
   WeekendMornings
