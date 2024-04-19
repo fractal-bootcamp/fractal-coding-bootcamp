@@ -1,6 +1,5 @@
 import type { User, Note } from "@prisma/client";
-
-import { prisma } from "~/.server/db";
+import { prisma } from "../db";
 
 export function getNote({
   id,
@@ -24,15 +23,19 @@ export function getNoteListItems({ userId }: { userId: User["id"] }) {
 
 export function createNote({
   body,
+  password,
   title,
   userId,
-}: Pick<Note, "body" | "title"> & {
+  tag,
+}: Pick<Note, "body" | "title" | "tag" | "password"> & {
   userId: User["id"];
 }) {
   return prisma.note.create({
     data: {
       title,
       body,
+      tag,
+      password,
       user: {
         connect: {
           id: userId,

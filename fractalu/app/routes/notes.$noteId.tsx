@@ -8,8 +8,8 @@ import {
 } from "@remix-run/react";
 import invariant from "tiny-invariant";
 
-import { deleteNote, getNote } from "~/.server/models/note";
-import { requireUserId } from "~/.server/session";
+import { deleteNote, getNote } from "~/server/models/note";
+import { requireUserId } from "~/server/session";
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const userId = await requireUserId(request);
