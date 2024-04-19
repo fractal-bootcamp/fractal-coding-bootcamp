@@ -2,32 +2,29 @@ import type { ClassApplication, ScheduleOptions } from "@prisma/client";
 import { prisma } from "dbclient";
 
 export function createClass({
-    id,
-    schedule_options,
+    //schedule_options,
     name,
-    description,
-    location,
-    class_size,
-    schedule_constraints
+    //description,
+    //location,
+    //class_size,
+    //schedule_constraints
 }: {
-    id: string,
-    schedule_options: ScheduleOptions,
+    //schedule_options: ScheduleOptions,
     name: string,
-    description: string,
-    location: string,
-    class_size: number,
-    schedule_constraints: string
+    //description: string,
+    //location: string,
+    //class_size: number,
+    //schedule_constraints: string
 
 }) {
     return prisma.classApplication.create({
         data: {
-            id,
-            schedule_options,
+            //schedule_options,
             name,
-            description,
-            location,
-            class_size,
-            schedule_constraints
+            //description,
+            //location,
+            //class_size,
+            //schedule_constraints
         }
 
     }

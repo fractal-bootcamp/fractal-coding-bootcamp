@@ -55,12 +55,12 @@ model Instructor {
 
 model ClassApplication {
   id                   String            @id @default(cuid())
-  schedule_options     ScheduleOptions
+  schedule_options     ScheduleOptions?   @default(WeekdayEvenings)
   name                 String            @unique
-  description          String            @unique
-  location             String
-  class_size           Int
-  schedule_constraints String
+  description          String?            @unique
+  location             String?
+  class_size           Int?
+  schedule_constraints String?
   instructors          Instructor[]
 
 }
