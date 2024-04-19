@@ -62,7 +62,7 @@ model SocialLink {
 
 model ClassApplication {
   id                   String            @id @default(cuid())
-  schedule_options     ScheduleOptions[]
+  schedule_options     ScheduleOptions
   name                 String            @unique
   description          String            @unique
   location             String

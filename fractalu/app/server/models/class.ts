@@ -1,4 +1,4 @@
-import type { ClassApplication } from "@prisma/client";
+import type { ClassApplication, ScheduleOptions } from "@prisma/client";
 import { prisma } from "dbclient";
 
 export function createClass({
@@ -10,7 +10,7 @@ export function createClass({
     class_size,
     schedule_constraints
 }: {
-    id: number,
+    id: string,
     schedule_options: ScheduleOptions,
     name: string,
     description: string,
@@ -19,7 +19,7 @@ export function createClass({
     schedule_constraints: string
 
 }) {
-    return prisma.ClassApplication.create({
+    return prisma.classApplication.create({
         data: {
             id,
             schedule_options,
@@ -39,19 +39,12 @@ export function createClass({
 export function getClass({
     id
 }: {
-    id: number
+    id: string
 }) {
-    return prisma.ClassApplication.findFirst({
+    return prisma.classApplication.findFirst({
         where: { id },
     });
 
 
 }
 
-enum ScheduleOptions {
-    "weekday evenings",
-    "weekday nights",
-    "weekend mornings",
-    "weekend afternoons",
-    "weekend evenings"
-}
