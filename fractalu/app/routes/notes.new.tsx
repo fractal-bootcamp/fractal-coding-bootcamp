@@ -12,6 +12,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
   const title = formData.get("title");
   const body = formData.get("body");
+  const tag = formData.get("tag");
   const password = formData.get("password") as string;
 
   if (typeof title !== "string" || title.length === 0) {
@@ -28,7 +29,14 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     );
   }
 
-  const note = await createNote({ body, title, userId, tag: "test", password });
+  if (typeof tag !== "string" || tag.length === 0) {
+    return json(
+      { errors: { tag: "Tag is required" } },
+      { status: 400 },
+    );
+  }
+
+  const note = await createNote({ body, title, userId, tag, password });
 
   return redirect(`/notes/${note.id}`);
 };
@@ -47,12 +55,15 @@ export default function NewNotePage() {
   const actionData = useActionData<typeof action>();
   const titleRef = useRef<HTMLInputElement>(null);
   const bodyRef = useRef<HTMLTextAreaElement>(null);
+  const tagRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (actionData?.errors?.title) {
       titleRef.current?.focus();
     } else if (actionData?.errors?.body) {
       bodyRef.current?.focus();
+    } else if (actionData?.errors?.tag) {
+      tagRef.current?.focus();
     }
   }, [actionData]);
 
@@ -104,8 +115,6 @@ export default function NewNotePage() {
             }
           />
         </label>
-
-        <PasswordField />
         {actionData?.errors?.body ? (
           <div className="pt-1 text-red-700" id="body-error">
             {actionData.errors.body}
@@ -113,7 +122,29 @@ export default function NewNotePage() {
         ) : null}
       </div>
 
+      <div>
+        <label className="flex w-full flex-col gap-1">
+          <span>Tag: </span>
+          <input
+            ref={tagRef}
+            name="tag"
+            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
+            aria-invalid={actionData?.errors?.tag ? true : undefined}
+            aria-errormessage={
+              actionData?.errors?.tag ? "tag-error" : undefined
+            }
+          />
+        </label>
+        {actionData?.errors?.tag ? (
+          <div className="pt-1 text-red-700" id="tag-error">
+            {actionData.errors.tag}
+          </div>
+        ) : null}
+      </div>
 
+      <div>
+        <PasswordField />
+      </div>
 
       <div className="text-right">
         <button
